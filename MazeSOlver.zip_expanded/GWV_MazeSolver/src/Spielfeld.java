@@ -36,7 +36,8 @@ public class Spielfeld {
 	}
 	
 	
-
+	//workt nicht zu 100% 
+	//speichert iwas komisches in in _spielfeld. 
 	public Spielfeld(char [] spielfeld) {
 		_spielfeld = new char[_spielfeldY][_spielfeldX];
 		
