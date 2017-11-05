@@ -65,34 +65,38 @@ public class Spielfeld {
 	}
 	
 	
-	public void bewege1FeldHoch() {
+	public void bewege1FeldHoch() throws ObstructedFieldException {
 		if(!(_spielfeld[_playerPositionY+1][_playerPositionX] == 'x')) {
 			_spielfeld[_playerPositionY+1][_playerPositionX] = _spielfeld[_playerPositionY][_playerPositionX];	
 			_spielfeld[_playerPositionY][_playerPositionX] = ' ';
 			_playerPositionY +=1 ;
 		}
+		else throw new ObstructedFieldException();
 	}
 	
-	public void bewege1FeldRunter() {
+	public void bewege1FeldRunter() throws ObstructedFieldException {
 		if(!(_spielfeld[_playerPositionY-1][_playerPositionX] == 'x')) {
 			_spielfeld[_playerPositionY-1][_playerPositionX] = _spielfeld[_playerPositionY][_playerPositionX];	
 			_spielfeld[_playerPositionY][_playerPositionX] = ' ';
 			_playerPositionY -=1 ;
 		}
+		else throw new ObstructedFieldException();
 	}
-	public void bewege1FeldRechts() {
+	public void bewege1FeldRechts() throws ObstructedFieldException {
 		if(!(_spielfeld[_playerPositionY][_playerPositionX +1] == 'x')) {
 			_spielfeld[_playerPositionY][_playerPositionX+1] = _spielfeld[_playerPositionY][_playerPositionX];	
 			_spielfeld[_playerPositionY][_playerPositionX] = ' ';
 			_playerPositionX +=1 ;
 		}
+		else throw new ObstructedFieldException();
 	}
-	public void bewege1FeldLinks() {
+	public void bewege1FeldLinks() throws ObstructedFieldException {
 		if(!(_spielfeld[_playerPositionY][_playerPositionX -1] == 'x')) {
 			_spielfeld[_playerPositionY][_playerPositionX -1] = _spielfeld[_playerPositionY][_playerPositionX];	
 			_spielfeld[_playerPositionY][_playerPositionX] = ' ';
 			_playerPositionX -=1 ;
 		}
+		else throw new ObstructedFieldException();
 	}
 	
 	public int[] getPlayerPosition() {

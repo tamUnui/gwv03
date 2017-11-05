@@ -1,6 +1,7 @@
 import java.io.File;
 
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 
 public class StartUp {
 
@@ -16,7 +17,11 @@ public class StartUp {
 		Spielfeld spielfeld = new Spielfeld(); //parser.getParsedInput()
 		spielfeld.print();
 		
-		spielfeld.bewege1FeldHoch();
+		try {
+			spielfeld.bewege1FeldHoch();
+		} catch (ObstructedFieldException e) {
+		JOptionPane.showMessageDialog(null, "Das Feld ist nicht betretbar");
+		}
 		
 		spielfeld.print();
 	}
