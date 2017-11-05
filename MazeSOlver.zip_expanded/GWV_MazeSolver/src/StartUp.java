@@ -13,7 +13,11 @@ public class StartUp {
 		chooser.showOpenDialog(null);
 		File file = chooser.getSelectedFile();
 		InputParser parser = new InputParser(file);
-		Spielfeld spielfeld = new Spielfeld(parser.getParsedInput());
+		Spielfeld spielfeld = new Spielfeld(); //parser.getParsedInput()
+		spielfeld.print();
+		
+		spielfeld.bewege1FeldHoch();
+		
 		spielfeld.print();
 	}
 }
