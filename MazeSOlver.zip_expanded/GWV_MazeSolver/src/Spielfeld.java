@@ -65,7 +65,7 @@ public class Spielfeld {
 	}
 	
 	
-	public void bewege1FeldHoch() throws ObstructedFieldException {
+	public void bewege1FeldRunter() throws ObstructedFieldException {
 		if(!(_spielfeld[_playerPositionY+1][_playerPositionX] == 'x')) {
 			_spielfeld[_playerPositionY+1][_playerPositionX] = _spielfeld[_playerPositionY][_playerPositionX];	
 			_spielfeld[_playerPositionY][_playerPositionX] = ' ';
@@ -74,7 +74,7 @@ public class Spielfeld {
 		else throw new ObstructedFieldException();
 	}
 	
-	public void bewege1FeldRunter() throws ObstructedFieldException {
+	public void bewege1FeldHoch () throws ObstructedFieldException {
 		if(!(_spielfeld[_playerPositionY-1][_playerPositionX] == 'x')) {
 			_spielfeld[_playerPositionY-1][_playerPositionX] = _spielfeld[_playerPositionY][_playerPositionX];	
 			_spielfeld[_playerPositionY][_playerPositionX] = ' ';

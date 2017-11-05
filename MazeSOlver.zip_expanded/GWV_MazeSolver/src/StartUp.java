@@ -9,20 +9,23 @@ public class StartUp {
 		
 		
 		JFileChooser chooser = new JFileChooser();
-		//ADD Cancel Dialog
+		
 		//ADD GUI Class
-		chooser.showOpenDialog(null);
+		if(chooser.showOpenDialog(null) == JFileChooser.CANCEL_OPTION) System.exit(0);
 		File file = chooser.getSelectedFile();
 		InputParser parser = new InputParser(file);
-		Spielfeld spielfeld = new Spielfeld(); //parser.getParsedInput()
+		Spielfeld spielfeld = new Spielfeld(parser.getParsedInput()); //
 		spielfeld.print();
 		
-		try {
-			spielfeld.bewege1FeldHoch();
-		} catch (ObstructedFieldException e) {
-		JOptionPane.showMessageDialog(null, "Das Feld ist nicht betretbar");
-		}
-		
-		spielfeld.print();
+//		try {
+//			spielfeld.bewege1FeldRunter();
+//			spielfeld.bewege1FeldRunter();
+//			spielfeld.bewege1FeldRunter();
+//			spielfeld.bewege1FeldRunter();
+//		} catch (ObstructedFieldEfxception e) {
+//		JOptionPane.showMessageDialog(null, "Das Feld ist nicht betretbar");
+//		}
+//		
+//		spielfeld.print();
 	}
 }
