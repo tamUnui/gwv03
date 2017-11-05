@@ -23,7 +23,7 @@ public class InputParser {
 		catch (FileNotFoundException e){
 			System.out.print("Datei nicht gefunden");
 		} catch (UnsupportedDataTypeException e) {
-			System.out.print("Nicht unterstützte Datei. Entweder keine .txt oder nicht lesbar");
+			System.out.print("Nicht unterstÃ¼tzte Datei. Entweder keine .txt oder nicht lesbar");
 			e.printStackTrace();
 			System.exit(0);
 		}
@@ -52,4 +52,8 @@ public class InputParser {
 	public char[] getParsedInput(){
 		return input;
 	}
+	
+	public void print(){
+        	System.out.print(input);
+        }
 }
